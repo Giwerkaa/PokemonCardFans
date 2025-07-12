@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PokemonFans</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+  <div class="container">
+    <header id="main-header">
+      <h1 id="header-title">PokemonFans</h1>
+      <p id="description" class="description">Zawartość na stronie to wyłącznie moje karty, które uzbierałem.</p>
+    </header>
+    
+    <div class="language-selector">
+      <button id="lang-pl" class="active" aria-label="Przełącz na język polski">Polski</button>
+      <button id="lang-en" aria-label="Switch to English">English</button>
+    </div>
+    
+    <div class="tabs-container">
+      <div class="tabs">
+        <div class="tab active" data-tab="1" id="tab-btn-1">Karty energii</div>
+        <div class="tab" data-tab="2" id="tab-btn-2">Karty Pokemon</div>
+        <div class="tab" data-tab="3" id="tab-btn-3">Trener</div>
+        <div class="tab" data-tab="4" id="tab-btn-4">Wspieraj twórcę</div>
+      </div>
+
+      <div class="content">
+        <!-- Zakładka Karty energii -->
+        <div id="tab-1" class="tab-content active">
+          <h2 id="tab-1-title">Karty energii</h2>
+          <div class="subtabs" id="subtabs-1">
+            <div class="subtab active" data-subtab="grass" id="subtab-1-grass">Trawa</div>
+            <div class="subtab" data-subtab="fire" id="subtab-1-fire">Ogień</div>
+            <div class="subtab" data-subtab="lightning" id="subtab-1-lightning">Błyskawica</div>
+            <div class="subtab" data-subtab="psychic" id="subtab-1-psychic">Psychiczna</div>
+            <div class="subtab" data-subtab="fighting" id="subtab-1-fighting">Walcząca</div>
+            <div class="subtab" data-subtab="darkness" id="subtab-1-darkness">Mroczna</div>
+            <div class="subtab" data-subtab="metal" id="subtab-1-metal">Metal</div>
+          </div>
+          <div class="subcontent">
+            <div id="grass" class="subcontent-item active">
+              <div class="card-gallery">
+                <div class="card-loading">
+                  <div class="loader"></div>
+                </div>
+              </div>
+            </div>
+            <div id="fire" class="subcontent-item">
+              <div class="card-gallery"></div>
+            </div>
+            <div id="lightning" class="subcontent-item">
+              <div class="card-gallery"></div>
+            </div>
+            <div id="psychic" class="subcontent-item">
+              <div class="card-gallery"></div>
+            </div>
+            <div id="fighting" class="subcontent-item">
+              <div class="card-gallery"></div>
+            </div>
+            <div id="darkness" class="subcontent-item">
+              <div class="card-gallery"></div>
+            </div>
+            <div id="metal" class="subcontent-item">
+              <div class="card-gallery"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Zakładka Karty Pokemon -->
+        <div id="tab-2" class="tab-content">
+          <h2 id="tab-2-title">Karty Pokemon</h2>
+          <div class="subtabs" id="subtabs-2">
+            <div class="subtab active" data-subtab="pokemon-regular" id="subtab-2-regular">Zwykłe karty</div>
+            <div class="subtab" data-subtab="pokemon-holo" id="subtab-2-holo">Holo</div>
+            <div class="subtab" data-subtab="pokemon-v" id="subtab-2-v">V</div>
+            <div class="subtab" data-subtab="pokemon-vstar" id="subtab-2-vstar">vStar</div>
+            <div class="subtab" data-subtab="pokemon-vmax" id="subtab-2-vmax">vmax</div>
+            <div class="subtab" data-subtab="pokemon-jumbo" id="subtab-2-jumbo">JUMBO CARD</div>
+          </div>
+          <div class="subcontent">
+            <div id="pokemon-regular" class="subcontent-item active">
+              <div class="card-gallery"></div>
+            </div>
+            <div id="pokemon-holo" class="subcontent-item">
+              <div class="card-gallery"></div>
+            </div>
+            <div id="pokemon-v" class="subcontent-item">
+              <div class="card-gallery"></div>
+            </div>
+            <div id="pokemon-vstar" class="subcontent-item">
+              <div class="card-gallery"></div>
+            </div>
+            <div id="pokemon-vmax" class="subcontent-item">
+              <div class="card-gallery"></div>
+            </div>
+            <div id="pokemon-jumbo" class="subcontent-item">
+              <div class="card-gallery"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Zakładka Trener -->
+        <div id="tab-3" class="tab-content">
+          <h2 id="tab-3-title">Trener</h2>
+          <div class="subtabs" id="subtabs-3">
+            <div class="subtab active" data-subtab="trainer-supporter" id="subtab-3-supporter">Supporter</div>
+            <div class="subtab" data-subtab="trainer-item" id="subtab-3-item">Item Tool</div>
+            <div class="subtab" data-subtab="trainer-stadium" id="subtab-3-stadium">Stadium</div>
+          </div>
+          <div class="subcontent">
+            <div id="trainer-supporter" class="subcontent-item active">
+              <div class="card-gallery"></div>
+            </div>
+            <div id="trainer-item" class="subcontent-item">
+              <div class="card-gallery"></div>
+            </div>
+            <div id="trainer-stadium" class="subcontent-item">
+              <div class="card-gallery"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Zakładka Wspieraj twórcę -->
+        <div id="tab-4" class="tab-content">
+          <h2>Wspieraj twórcę</h2>
+          <p>Tutaj możesz dodać informacje o sposobach wsparcia.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <button id="back-to-top" aria-label="Powrót na górę strony">↑</button>
+  <button id="chat-button" aria-label="Otwórz chat">💬</button>
+
+  <div id="chat-window">
+    <div class="chat-header">
+      <h3 id="chat-title">Zapytaj o karty</h3>
+      <button class="close-chat" aria-label="Zamknij chat">×</button>
+    </div>
+    <div class="chat-body">
+      <form id="contact-form">
+        <div class="form-group">
+          <label for="name" id="name-label">Imię:</label>
+          <input type="text" id="name" required aria-required="true">
+        </div>
+        <div class="form-group">
+          <label for="email" id="email-label">Email:</label>
+          <input type="email" id="email" required aria-required="true">
+        </div>
+        <div class="form-group">
+          <label for="message" id="message-label">Twoja wiadomość:</label>
+          <textarea id="message" required aria-required="true">Interesuje mnie zakup kart, proszę o więcej informacji.</textarea>
+        </div>
+        <button type="submit" class="submit-btn" id="submit-btn">Wyślij wiadomość</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

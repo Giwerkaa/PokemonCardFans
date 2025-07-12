@@ -1,0 +1,326 @@
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 20px;
+  background-image: url('tlo.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  height: 100vh;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.1);
+}
+
+#main-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+#header-title {
+  font-size: 4rem;
+  font-weight: 900;
+  color: #3b4cca;
+  margin: 0 auto;
+  padding: 30px 0;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  text-shadow: 
+    3px 3px 0 #ffcb05, 
+    6px 6px 0 rgba(0,0,0,0.1);
+}
+
+.description {
+  font-size: 1.2rem;
+  color: #555;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.language-selector {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+#lang-pl, #lang-en {
+  padding: 10px 25px;
+  border: 3px solid #3b4cca;
+  border-radius: 30px;
+  background-color: transparent;
+  color: #3b4cca;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#lang-pl.active, #lang-en.active {
+  background-color: #3b4cca;
+  color: white;
+}
+
+.tabs-container {
+  margin-top: 20px;
+}
+
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.tab {
+  padding: 12px 24px;
+  background-color: #f0f0f0;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.tab.active {
+  background-color: #ffcb05;
+  font-weight: bold;
+}
+
+.content {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 20px;
+  background-color: white;
+}
+
+.subtabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 15px 0;
+}
+
+.subtab {
+  padding: 8px 16px;
+  background-color: #e0e0e0;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.subtab.active {
+  background-color: #3b4cca;
+  color: white;
+}
+
+.card-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.card {
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card-image {
+  width: 100%;
+  height: 180px;
+  object-fit: contain;
+  padding: 10px;
+}
+
+.card-price {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #e63946;
+  text-align: center;
+  margin: 10px 0;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.card-description {
+  padding: 0 15px 15px;
+  font-size: 0.9rem;
+  color: #555;
+  text-align: center;
+}
+
+/* Kolory dla różnych typów energii */
+#grass .card-price { background: linear-gradient(90deg, #78c850, #a8e072); }
+#fire .card-price { background: linear-gradient(90deg, #f08030, #f5ac78); }
+#lightning .card-price { background: linear-gradient(90deg, #f8d030, #fae078); }
+#psychic .card-price { background: linear-gradient(90deg, #f85888, #fa92b2); }
+#fighting .card-price { background: linear-gradient(90deg, #c03028, #d67873); }
+#darkness .card-price { background: linear-gradient(90deg, #705848, #a29288); }
+#metal .card-price { background: linear-gradient(90deg, #b8b8d0, #d8d8e8); }
+
+#back-to-top {
+  position: fixed;
+  bottom: 30px;
+  left: 30px;
+  background: #3b4cca;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 20px;
+  cursor: pointer;
+  display: none;
+  z-index: 1000;
+}
+
+#chat-button {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: #ffcb05;
+  color: #3b4cca;
+  border: none;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  font-size: 24px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  z-index: 1000;
+}
+
+#chat-window {
+  position: fixed;
+  bottom: 100px;
+  right: 30px;
+  width: 300px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  z-index: 1001;
+  display: none;
+  transform: translateY(20px);
+  opacity: 0;
+  transition: all 0.3s ease-out;
+}
+
+#chat-window.show {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.chat-header {
+  padding: 15px;
+  background: #3b4cca;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+}
+
+.close-chat {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.chat-body {
+  padding: 15px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.form-group input, 
+.form-group textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.submit-btn {
+  background-color: #ffcb05;
+  color: #3b4cca;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  width: 100%;
+}
+
+.tab-content {
+  opacity: 0;
+  height: 0;
+  overflow: hidden;
+  transition: opacity 0.3s ease, height 0.3s ease;
+}
+.tab-content.active {
+  opacity: 1;
+  height: auto;
+}
+
+.card-loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 200px;
+}
+.loader {
+  border: 5px solid #f3f3f3;
+  border-top: 5px solid #3b4cca;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+}
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.subcontent-item {
+  display: none;
+}
+
+.subcontent-item.active {
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .card-gallery {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  }
+  #chat-window {
+    width: 280px;
+  }
+  .subtabs {
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    padding-bottom: 10px;
+  }
+  .subtab {
+    white-space: nowrap;
+  }
+}
